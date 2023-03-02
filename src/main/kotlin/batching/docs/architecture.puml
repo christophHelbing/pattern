@@ -1,0 +1,46 @@
+@startuml
+
+class Executor {
+    +main()
+}
+
+class BatchRegistry <<Singleton>> {
+    +batchProcesses: Map<String, BatchProcess>
+    +getBatchProcesses(): List<BatchProcess>
+}
+
+interface BatchProcess {
+    +getJobs(): List<Job>
+}
+
+interface Reader {
+    +read(): List<In>
+}
+
+interface Writer {
+    +write(dataToWrite: List<Out>)
+}
+
+interface Processor {
+    +process(value: In): Out
+}
+
+interface Job {
+    +execute()
+}
+
+class SimpleJob {}
+
+Executor -- BatchRegistry : uses
+
+BatchRegistry o-- BatchProcess : contains
+
+BatchProcess -- Job
+
+Job <|-- SimpleJob
+
+SimpleJob o-- Reader : owns
+SimpleJob o-- Processor : owns
+SimpleJob o-- Writer : owns
+
+@enduml
