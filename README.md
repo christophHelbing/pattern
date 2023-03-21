@@ -8,15 +8,15 @@ but also patterns that we've found useful in our projects.
 
 ## Current Implemented Patterns
 1. Batching
+2. Builder
 
 ## Want to have
-1. Builder
-2. Chain of Responsibility
-3. Command
-4. Composite
-5. Decorator
-6. Dependency Injection
-7. Facade
-8. Factory
-9. Flyweight
-10. Iterator
+1. Chain of Responsibility
+2. Command
+3. Composite
+4. Decorator
+5. Dependency Injection
+6. Facade
+7. Factory
+8. Flyweight
+9. Iterator
